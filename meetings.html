@@ -4,39 +4,192 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Telangana TPO Consortium</title>
-	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Meetings & Events - Telangana TPO Consortium | TTPOC</title>
+	<meta name="description"
+		content="Explore meetings, events, and meetups organized by the Telangana TPO Consortium (TTPOC). Access meeting documents, minutes, and browse our events showcase gallery." />
+	<meta name="keywords"
+		content="TTPOC Meetings, Telangana TPO Events, TPO Meetups, Meeting Minutes, Consortium Events, Placement Officer Meetings" />
+	<meta name="author" content="Telangana TPO Consortium" />
+	<meta name="robots" content="index, follow" />
+
 	<link rel="icon" type="image/png"
 		href="https://res.cloudinary.com/dbenkbws8/image/upload/v1691501311/Asset_3_1_ay28ar.png" />
+
+	<script src="https://cdn.tailwindcss.com"></script>
+
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,700&family=Ubuntu&display=swap"
 		rel="stylesheet" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-	<link rel="stylesheet" href="./css/navbar.css">
-	<script src="./js/navbar.js"></script>
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+		integrity="sha512-HA1iQ8Dlvd+PsDmD+1qlXniq/zYZ+lhT9spmlX4kbguHr3psnHYcTAs17d/jzyQYUKOqOZuGJ8+UDV14bdm0AA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<meta property="og:title" content="Meetings & Events - Telangana TPO Consortium" />
+	<meta property="og:description"
+		content="Access meeting documents and explore events organized by the Telangana TPO Consortium." />
+	<meta property="og:image"
+		content="https://res.cloudinary.com/dbenkbws8/image/upload/v1691501311/Asset_3_1_ay28ar.png" />
+	<meta property="og:url" content="https://www.ttpoconsortium.com/meetings.html" />
+	<meta property="og:type" content="website" />
+
+	<script src="./js/navbar.js"></script>
+	<link rel="stylesheet" href="./css/navbar.css">
+
+	<style>
+		body {
+			background: url('https://res.cloudinary.com/dbenkbws8/image/upload/v1691485885/Rectangle_2_c5utnz.png') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes fadeInScale {
+			from {
+				opacity: 0;
+				transform: scale(0.92);
+			}
+			to {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		@keyframes shimmer {
+			0% { background-position: -200% 0; }
+			100% { background-position: 200% 0; }
+		}
+
+		.animate-fade-up {
+			animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+			opacity: 0;
+		}
+
+		.animate-fade-scale {
+			animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+			opacity: 0;
+		}
+
+		.stagger-1 { animation-delay: 0.1s; }
+		.stagger-2 { animation-delay: 0.2s; }
+		.stagger-3 { animation-delay: 0.3s; }
+		.stagger-4 { animation-delay: 0.4s; }
+
+
+		.event-card {
+			background: rgba(255, 255, 255, 0.06);
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+			overflow: hidden;
+		}
+
+		.event-card:hover {
+			background: rgba(255, 255, 255, 0.1);
+			border-color: rgba(29, 156, 192, 0.3);
+			transform: translateY(-8px) scale(1.02);
+			box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+		}
+
+		.event-card:hover .event-img {
+			transform: scale(1.1);
+		}
+
+		.event-card:hover .event-overlay {
+			opacity: 1;
+		}
+
+		.event-card:hover .event-arrow {
+			transform: translateX(4px);
+			opacity: 1;
+		}
+
+		.event-img {
+			transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+		}
+
+		.event-overlay {
+			background: linear-gradient(to top, rgba(2, 30, 48, 0.95) 0%, rgba(2, 30, 48, 0.4) 50%, transparent 100%);
+			opacity: 0.8;
+			transition: opacity 0.4s ease;
+		}
+
+		.event-arrow {
+			transition: all 0.3s ease;
+			opacity: 0.7;
+		}
+
+		.section-divider {
+			height: 3px;
+			background: linear-gradient(90deg, transparent, #1d9cc0, #38bdf8, #1d9cc0, transparent);
+			border-radius: 2px;
+		}
+
+		.gallery-filter-btn {
+			transition: all 0.3s ease;
+		}
+
+		.gallery-filter-btn.active {
+			background: linear-gradient(135deg, #0ea5e9, #1d9cc0);
+			color: white;
+			box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+		}
+
+		/* Lightbox customization */
+		.lb-data .lb-caption {
+			font-size: 14px;
+			font-weight: 600;
+		}
+	</style>
+
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: {
+						ubuntu: ['Ubuntu', 'sans-serif'],
+						barlow: ['Barlow', 'sans-serif'],
+					},
+					colors: {
+						'consortium-blue': {
+							light: '#1d9cc0',
+							DEFAULT: '#032f4b',
+							dark: '#021e30',
+						},
+					},
+				}
+			}
+		}
+	</script>
 </head>
 
-<body class="bg-gray-100">
-	<div class="relative w-full">
-		<img class="max-w-full min-h-screen object-cover"
-			src="https://res.cloudinary.com/dbenkbws8/image/upload/v1691485885/Rectangle_2_c5utnz.png"
-			alt="Background Image" />
-
-		<!-- Header Section -->
-		<div class="absolute top-0 w-full">
-			<div class="w-full bg-consortium-blue-dark bg-opacity-90">
-				<!-- Mobile View -->
-				<div class="flex sm:hidden justify-between items-center py-2 px-4">
-					<div class="flex items-center">
-						<img class="h-16 mr-2 -mt-2"
-							src="https://res.cloudinary.com/dbenkbws8/image/upload/v1691501311/Asset_3_1_ay28ar.png" />
-						<h1 class="font-fira-sans text-white font-bold tracking-wide text-[16px]">
-							TELANGANA TRAINING & PLACEMENT OFFICERS CONSORTIUM
-						</h1>
-					</div>
-					<!-- Mobile Hamburger Button -->
+<body class="relative min-h-screen">
+	<!-- Content Wrapper -->
+	<div class="relative z-10 w-full">
+		<!-- Navbar -->
+		<div class="w-full bg-consortium-blue-dark bg-opacity-90">
+			<!-- Mobile View -->
+			<div class="flex sm:hidden flex-row justify-between items-center py-2 px-4">
+				<div class="flex items-center">
+					<img class="h-16 mr-2 -mt-2"
+						src="https://res.cloudinary.com/dbenkbws8/image/upload/v1691501311/Asset_3_1_ay28ar.png" />
+					<h1 class="font-fira-sans text-white text-center font-bold tracking-wide text-[16px]">
+						TELANGANA TRAINING & PLACEMENT OFFICERS CONSORTIUM
+					</h1>
+				</div>
+				<div>
 					<button id="menu-toggle" class="text-white focus:outline-none">
 						<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
 							xmlns="http://www.w3.org/2000/svg">
@@ -45,68 +198,410 @@
 						</svg>
 					</button>
 				</div>
-
-				<!-- Desktop View -->
-				<div class="hidden sm:flex flex-row justify-center items-center px-8 py-3">
-					<img class="h-28 mx-3 -mt-2"
-					  src="https://res.cloudinary.com/dbenkbws8/image/upload/v1691501311/Asset_3_1_ay28ar.png" />
-				
-					<div class="flex flex-col items-start">
-					  <h1 class="font-fira-sans text-white font-bold tracking-wide text-[28px]">
-						TELANGANA TRAINING & PLACEMENT OFFICERS CONSORTIUM
-					  </h1>
-					  <ul class="flex gap-5 mt-2">
-						<li><a href="/index.html" class="text-gray-400 font-bold text-[14px] hover:text-white">HOME</a></li>
-						<li><a href="/aboutUs.html" class="text-gray-400 font-bold text-[14px] hover:text-white">ABOUT US</a></li>
-						<li><a href="/events.html" class="text-gray-400 font-bold text-[14px] hover:text-white">EVENTS</a></li>
-						<li><a href="/committee.html" class="text-gray-400 font-bold text-[14px] hover:text-white">COMMITTEE</a></li>
-						<li><a href="/members.html" class="text-gray-400 font-bold text-[14px] hover:text-white">MEMBERS</a></li>
-						<li><a href="/membership.html" class="text-gray-400 font-bold text-[14px] hover:text-white">MEMBER REGISTRATION</a></li>
-						<li><a href="/meetings.html" class="text-white font-bold text-[14px] hover:text-white">MEETINGS</a></li>
-						<li><a href="/gallery.html" class="text-gray-400 font-bold text-[14px] hover:text-white">GALLERY</a></li>
-						<li><a href="/contact.html" class="text-gray-400 font-bold text-[14px] hover:text-white">CONTACT</a></li>
-					  </ul>
-					</div>
-				  </div>
 			</div>
 
-			<!-- Mobile Navigation Overlay -->
-			<div id="mobile-menu"
-				class="fixed inset-0 bg-consortium-blue-dark bg-opacity-95 z-50 transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300">
-				<!-- Close Button -->
-				<button id="close-menu" class="absolute top-6 right-6 text-white">
+			<!-- Desktop View -->
+			<div class="hidden sm:flex flex-row justify-center items-center px-8 py-3">
+				<img class="h-28 mx-3 -mt-2"
+					src="https://res.cloudinary.com/dbenkbws8/image/upload/v1691501311/Asset_3_1_ay28ar.png" />
+
+				<div class="flex flex-col items-start">
+					<h1 class="font-fira-sans text-white font-bold tracking-wide text-[28px]">
+						TELANGANA TRAINING & PLACEMENT OFFICERS CONSORTIUM
+					</h1>
+					<ul class="flex gap-5 mt-2">
+						<li><a href="/index.html" class="text-gray-400 font-bold text-[14px] hover:text-white">HOME</a>
+						</li>
+						<li><a href="/aboutUs.html" class="text-gray-400 font-bold text-[14px] hover:text-white">ABOUT
+								US</a></li>
+						<li><a href="/events.html"
+								class="text-gray-400 font-bold text-[14px] hover:text-white">EVENTS</a></li>
+						<li><a href="/committee.html"
+								class="text-gray-400 font-bold text-[14px] hover:text-white">COMMITTEE</a></li>
+						<li><a href="/members.html"
+								class="text-gray-400 font-bold text-[14px] hover:text-white">MEMBERS</a></li>
+						<li><a href="/membership.html"
+								class="text-gray-400 font-bold text-[14px] hover:text-white">MEMBER REGISTRATION</a>
+						</li>
+						<li><a href="/meetings.html"
+								class="text-white font-bold text-[14px] hover:text-white">MEETINGS</a></li>
+						<li><a href="/gallery.html"
+								class="text-gray-400 font-bold text-[14px] hover:text-white">GALLERY</a></li>
+						<li><a href="/contact.html"
+								class="text-gray-400 font-bold text-[14px] hover:text-white">CONTACT</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Navigation Overlay -->
+		<div id="mobile-menu"
+			class="fixed inset-0 bg-consortium-blue-dark bg-opacity-95 z-50 transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300">
+			<div class="absolute top-6 right-6">
+				<button id="close-menu"
+					class="text-white p-2 focus:outline-none rounded-full hover:bg-consortium-blue-light transition-colors duration-300">
 					<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
 							d="M6 18L18 6M6 6l12 12"></path>
 					</svg>
 				</button>
-
-				<!-- Mobile Menu Links -->
-				<ul class="flex flex-col h-full justify-center items-center space-y-6">
-					<li><a href="/index.html" class="text-gray-400 font-bold text-2xl hover:text-white">HOME</a></li>
-					<li><a href="/aboutUs.html" class="text-gray-400 font-bold text-2xl hover:text-white">ABOUT US</a>
+			</div>
+			<div class="flex flex-col h-full justify-center items-center">
+				<ul class="space-y-6 text-center">
+					<li><a href="/index.html"
+							class="text-gray-400 font-bold text-2xl hover:text-white transition-colors duration-300">HOME</a>
 					</li>
-					<li><a href="/events.html" class="text-gray-400 font-bold text-2xl hover:text-white">EVENTS</a></li>
+					<li><a href="/aboutUs.html"
+							class="text-gray-400 font-bold text-2xl hover:text-white transition-colors duration-300">ABOUT
+							US</a></li>
+					<li><a href="/events.html"
+							class="text-gray-400 font-bold text-2xl hover:text-white transition-colors duration-300">EVENTS</a>
+					</li>
 					<li><a href="/committee.html"
-							class="text-gray-400 font-bold text-2xl hover:text-white">COMMITTEE</a></li>
-					<li><a href="/members.html" class="text-gray-400 font-bold text-2xl hover:text-white">MEMBERS</a>
+							class="text-gray-400 font-bold text-2xl hover:text-white transition-colors duration-300">COMMITTEE</a>
+					</li>
+					<li><a href="/members.html"
+							class="text-gray-400 font-bold text-2xl hover:text-white transition-colors duration-300">MEMBERS</a>
 					</li>
 					<li><a href="/membership.html"
-							class="text-gray-400 font-bold text-2xl hover:text-white">REGISTRATION</a></li>
-					<li><a href="/meetings.html" class="text-white  font-bold text-2xl hover:text-white">MEETINGS</a>
+							class="text-gray-400 font-bold text-2xl hover:text-white transition-colors duration-300">MEMBER
+							REGISTRATION</a></li>
+					<li><a href="/meetings.html"
+							class="text-white font-bold text-2xl hover:text-white transition-colors duration-300">MEETINGS</a>
 					</li>
-					<li><a href="/gallery.html" class="text-gray-400 font-bold text-2xl hover:text-white">GALLERY</a>
+					<li><a href="/gallery.html"
+							class="text-gray-400 font-bold text-2xl hover:text-white transition-colors duration-300">GALLERY</a>
 					</li>
-					<li><a href="/contact.html" class="text-gray-400 font-bold text-2xl hover:text-white">CONTACT</a>
+					<li><a href="/contact.html"
+							class="text-gray-400 font-bold text-2xl hover:text-white transition-colors duration-300">CONTACT</a>
 					</li>
 				</ul>
 			</div>
 		</div>
+
+		<!-- Hero Section -->
+		<div class="pt-12 pb-4 text-center mt-6">
+			<div class="container mx-auto px-4">
+				<h1 class="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-up">
+					Meetings & Events
+				</h1>
+				<div class="h-1 w-24 bg-gradient-to-r from-sky-400 to-consortium-blue-light mx-auto mb-6 rounded animate-fade-up stagger-1"></div>
+					<p class="text-gray-300 max-w-2xl mx-auto text-lg animate-fade-up stagger-2">
+					Explore our vibrant community events, meetups, and industry collaborations that bring together TPOs, academia, and industry leaders.
+				</p>
+			</div>
+		</div>
+
+
+		<!-- Events & Meetups Showcase Section -->
+		<section class="py-14 px-4 md:px-8 max-w-7xl mx-auto">
+			<div class="text-center mb-12">
+				<h2 class="text-2xl md:text-3xl font-bold text-white mb-3 animate-fade-up">
+					<i class="fas fa-images text-consortium-blue-light mr-3"></i>Events & Meetups Showcase
+				</h2>
+				<p class="text-gray-400 max-w-2xl mx-auto animate-fade-up stagger-1">
+					A glimpse into our past events, industry collaborations, and community meetups that have brought together TPOs, industry leaders, and academia.
+				</p>
+			</div>
+
+			<!-- Events Grid -->
+			<div id="eventsShowcase" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+				<!-- JS rendered -->
+			</div>
+		</section>
+
+		<!-- Section Divider -->
+		<div class="max-w-4xl mx-auto px-8">
+			<div class="section-divider"></div>
+		</div>
+
+		<!-- Photo Gallery Highlights -->
+		<section class="py-14 px-4 md:px-8 max-w-7xl mx-auto">
+			<div class="text-center mb-12">
+				<h2 class="text-2xl md:text-3xl font-bold text-white mb-3 animate-fade-up">
+					<i class="fas fa-camera text-consortium-blue-light mr-3"></i>Photo Highlights
+				</h2>
+				<p class="text-gray-400 max-w-2xl mx-auto animate-fade-up stagger-1">
+					Browse through memorable moments from our events and meetups.
+				</p>
+			</div>
+
+			<div id="photoGallery" class="flex flex-wrap justify-center gap-4">
+				<!-- JS rendered -->
+			</div>
+
+			<div class="mt-10 text-center">
+				<a href="/gallery.html"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-consortium-blue-light to-sky-500 text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+					<i class="fas fa-th-large"></i>
+					View Full Gallery
+				</a>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-gray-800 py-12 pb-2">
+			<div class="container mx-auto max-w-6xl px-4">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<!-- Column 1: About -->
+					<div>
+						<h3 class="text-xl font-bold mb-4 text-consortium-blue-light">About Us</h3>
+						<p class="text-gray-300 mb-4">
+							Telangana TPO Consortium is a collaborative platform for Training & Placement Officers
+							across
+							the state to
+							enhance placement opportunities for students.
+						</p>
+					</div>
+
+					<!-- Column 2: Quick Links -->
+					<div>
+						<h3 class="text-xl font-bold mb-4 text-consortium-blue-light">Quick Links</h3>
+						<ul class="space-y-2">
+							<li><a href="/aboutUs.html" class="text-gray-300 hover:text-white transition">About Us</a>
+							</li>
+							<li><a href="/events.html" class="text-gray-300 hover:text-white transition">Events</a></li>
+							<li><a href="/committee.html"
+									class="text-gray-300 hover:text-white transition">Committee</a>
+							</li>
+							<li><a href="/membership.html"
+									class="text-gray-300 hover:text-white transition">Membership</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Column 3: Contact & Social -->
+					<div>
+						<h3 class="text-xl font-bold mb-4 text-consortium-blue-light">Connect With Us</h3>
+						<p class="text-gray-300 mb-4">Follow us on social media for updates and announcements</p>
+
+						<!-- Social Media Icons -->
+						<div class="flex gap-4">
+							<a href="https://twitter.com/ttpoconsortium"
+								class="bg-blue-500 hover:bg-blue-600 py-3 px-4 rounded-full transition-all transform hover:scale-110">
+								<i class="fab fa-twitter text-white text-xl"></i>
+							</a>
+							<a href="https://www.instagram.com/ttpoconsortium/"
+								class="bg-gradient-to-r from-purple-500 to-pink-500 py-3 px-4 rounded-full transition-all transform hover:scale-110">
+								<i class="fab fa-instagram text-white text-xl"></i>
+							</a>
+							<a href="https://www.linkedin.com/company/telangana-tpo-consortium/"
+								class="bg-blue-700 hover:bg-blue-800 py-3 px-4 rounded-full transition-all transform hover:scale-110">
+								<i class="fab fa-linkedin-in text-white text-xl"></i>
+							</a>
+							<a href="https://www.youtube.com/@ttpoconsortium/"
+								class="bg-red-700 hover:bg-red-800 py-3 px-4 rounded-full transition-all transform hover:scale-110">
+								<i class="fab fa-youtube text-white text-xl"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Copyright -->
+				<div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+					<p>&copy; 2025 Telangana TPO Consortium. All Rights Reserved.</p>
+				</div>
+			</div>
+		</footer>
 	</div>
 
-	<!-- JavaScript for Toggling Mobile Menu -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"
+		integrity="sha512-o0Xre9ZoM4H5F2ODcLZYKJK+Es2g8j3FQh3lOv5zmcx4khVZcqOh4+LFB1DR+FeceRZj4qsyZkXFKBqP3oy7OQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+	<script>
+		// Events data for the showcase cards
+		const eventsData = [
+			{
+				title: "TPO Meet at ESCI",
+				date: "22nd August 2025",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/TPO-meet-at-ESCI-22nd-August-2025.jpeg",
+				venue: "ESCI, Hyderabad",
+			},
+			{
+				title: "HR & TPO Wellness Retreat",
+				date: "13th December 2025",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/wellness-retreat-1.jpg",
+				link: "/events/hr-tpo-retreat.html",
+				venue: "Hyderabad",
+			},
+			{
+				title: "Pathway to Taiwan: Career & Study Expo",
+				date: "10th December 2025",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/Taiwan-meet-dec-2.jpeg",
+				link: "/events/taiwan-expo.html",
+				venue: "T-Works, Hyderabad",
+			},
+			{
+				title: "TPO & Faculty Meet - CDAC",
+				date: "2nd December 2025",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/cdac1.JPG",
+				link: "/events/cdac-faculty-meet.html",
+				venue: "C-DAC, Hyderabad",
+			},
+			{
+				title: "FyrstGen Innovation Summit 2025",
+				date: "11th November 2025",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/firstgen-innovation-summit-2025-1.jpeg",
+				link: "/events/fyrstgen-innovation-summit.html",
+				venue: "T-Hub, Hyderabad",
+			},
+			{
+				title: "Cognizant-TPO Meet",
+				date: "6th October 2025",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/cog_event1.jpeg",
+				link: "/events/cognizant-tpo-meet.html",
+				venue: "Cognizant GAR Campus, Hyderabad",
+			},
+			{
+				title: "Grand Launch of T-CHIP",
+				date: "27th September 2025",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/t-chip1.jpg",
+				link: "/events/t-chip-launch.html",
+				venue: "Hotel Trident, Hyderabad",
+			},
+			{
+				title: "Career Nexus 2025",
+				date: "June 6-7, 2025",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/career-nexus-2025-1.jpg",
+				link: "/events/career-nexus-2025.html",
+				venue: "Shamshabad, Hyderabad",
+			},
+			{
+				title: "Suman TV Builder Award Summit",
+				date: "2025",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/Suman-TV-builder-%20award-summit.jpeg",
+				venue: "Hyderabad",
+			},
+			{
+				title: "LinkedIn for Institutional Growth",
+				date: "November 28, 2024",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/linkedin-1.jpeg",
+				link: "/events/linkedin.html",
+				venue: "Bangalore",
+			},
+			{
+				title: "Talent Connect - TConsult",
+				date: "November 30, 2024",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/tconsult-1.jpg",
+				link: "/events/talent-connect.html",
+				venue: "T-Hub, Hyderabad",
+			},
+			{
+				title: "SAP Digital Conclave",
+				date: "October 2024",
+				image: "https://res.cloudinary.com/dtkvrpdtp/image/upload/v1741485951/IMG-20250304-WA0009_owtefc.jpg",
+				link: "/events/sap-digital-conclave.html",
+				venue: "Hyderabad",
+			},
+			{
+				title: "Nasscom ER&D",
+				date: "July 2024",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/nasscom-1.jpg",
+				link: "/events/nasscom-2024.html",
+				venue: "Hyderabad",
+			},
+			{
+				title: "TOEFL Meet",
+				date: "July 2024",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/toefl1.jpg",
+				link: "/events/toefl-meet.html",
+				venue: "Hyderabad",
+			},
+			{
+				title: "Career Nexus 2024",
+				date: "April 2024",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/career-nexus-2024-1.jpg",
+				link: "/events/career-nexus-2024.html",
+				venue: "Hyderabad",
+			},
+			{
+				title: "TTPOC Launch Event",
+				date: "August 2023",
+				image: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/launch_event.jpg",
+				link: "/events/ttpoc-launch.html",
+				venue: "Hyderabad",
+			},
+		];
+
+		// Photo gallery highlights — curated best images from events
+		const galleryPhotos = [
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/career-nexus-2025-2.jpg", alt: "Career Nexus 2025" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/wellness-retreat-3.jpg", alt: "HR & TPO Wellness Retreat" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/cog_event2.jpeg", alt: "Cognizant-TPO Meet" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/t-chip3.jpg", alt: "T-CHIP Launch" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/Taiwan-meet-dec-1.jpeg", alt: "Taiwan Career Expo" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/firstgen-innovation-summit-2025-3.jpeg", alt: "FyrstGen Innovation Summit" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/career-nexus-2025-5.jpg", alt: "Career Nexus 2025" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/linkedin-3.jpeg", alt: "LinkedIn for Institutional Growth" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/nasscom-2.jpg", alt: "Nasscom ER&D" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/cdac2.JPG", alt: "CDAC Faculty Meet" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/career-nexus-2025-7.jpg", alt: "Career Nexus 2025" },
+			{ src: "https://cdn.jsdelivr.net/gh/ttpoc-web/website@main/assets/wellness-retreat-5.jpg", alt: "HR & TPO Wellness Retreat" },
+		];
+
+		document.addEventListener('DOMContentLoaded', function () {
+			// Render Events Showcase
+			const eventsContainer = document.getElementById('eventsShowcase');
+			eventsContainer.innerHTML = eventsData.map((event, index) => {
+				const linkStart = event.link ? `<a href="${event.link}" class="block h-full">` : `<div class="block h-full">`;
+				const linkEnd = event.link ? `</a>` : `</div>`;
+
+				return `
+				${linkStart}
+					<div class="event-card rounded-xl h-full flex flex-col" style="animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: ${index * 0.08}s; opacity: 0;">
+						<div class="relative h-48 overflow-hidden rounded-t-xl">
+							<img src="${event.image}" alt="${event.title}" 
+								class="event-img w-full h-full object-cover" loading="lazy" />
+							<div class="event-overlay absolute inset-0"></div>
+							<div class="absolute bottom-3 left-3 right-3">
+								<span class="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-300 bg-consortium-blue-dark/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
+									<i class="fas fa-calendar-alt text-[10px]"></i>${event.date}
+								</span>
+							</div>
+						</div>
+						<div class="p-4 flex flex-col flex-1">
+							<h3 class="text-white font-bold text-base mb-1.5 leading-tight">${event.title}</h3>
+							<div class="flex items-center gap-1.5 text-gray-400 text-xs mt-auto">
+								<i class="fas fa-map-marker-alt text-consortium-blue-light text-[10px]"></i>
+								<span>${event.venue}</span>
+							</div>
+							${event.link ? `
+							<div class="flex items-center text-sky-400 text-sm font-semibold mt-3 event-arrow">
+								<span>View Details</span>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+								</svg>
+							</div>` : ''}
+						</div>
+					</div>
+				${linkEnd}
+				`;
+			}).join('');
+
+			// Render Photo Gallery
+			const photoGallery = document.getElementById('photoGallery');
+			photoGallery.innerHTML = galleryPhotos.map((photo, index) => `
+				<div style="animation: fadeInScale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: ${index * 0.06}s; opacity: 0;">
+					<a href="${photo.src}" data-lightbox="meetings-gallery" data-title="${photo.alt}">
+						<img src="${photo.src}" alt="${photo.alt}" loading="lazy"
+							class="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] w-72 h-52 object-cover cursor-pointer" />
+					</a>
+				</div>
+			`).join('');
+
+			// Configure lightbox
+			lightbox.option({
+				'resizeDuration': 200,
+				'wrapAround': true,
+				'showImageNumberLabel': true,
+				'fadeDuration': 300,
+				'albumLabel': "Image %1 of %2"
+			});
+		});
+	</script>
 </body>
 
 </html>
